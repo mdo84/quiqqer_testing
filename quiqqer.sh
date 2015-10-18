@@ -34,7 +34,7 @@ function start {
   docker run --name mysqldb -e MYSQL_ROOT_PASSWORD=quiqqer -e MYSQL_DATABASE=quiqqer -d mysql
 
   # use the built image
-  docker run --name apache2 --link mysqldb:mysql -p 80:80 -d quiqqer/apache2 /usr/sbin/apache2ctl -D FOREGROUND
+  docker run --name apache2 --link mysqldb:mysql -p 8888:80 -d quiqqer/apache2 /usr/sbin/apache2ctl -D FOREGROUND
 
 }
 

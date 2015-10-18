@@ -22,5 +22,5 @@ sudo bash quiqqer.sh <OPTION>
 - db:      quiqqer
 
 ##Testen der Container
-"localhost" im Browser eingeben
+"localhost:8888" im Browser eingeben
 

@@ -17,9 +17,9 @@ sudo bash quiqqer.sh <OPTION>
 
 ##Zugangsdaten Datenbank
 ###mysql
-host:    mysqldb
-root-pw: quiqqer
-db:      quiqqer
+- host:    mysqldb
+- root-pw: quiqqer
+- db:      quiqqer
 
 ##Testen der Container
 "localhost" im Browser eingeben

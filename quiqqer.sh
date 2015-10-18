@@ -8,10 +8,9 @@
 #
 #
 # check if docker is installed
-if [[ ! -e /bin/docker ]]
-then
-  echo "Docker is not installed"
-  exit 1
+command -v docker >/dev/null 2>&1 || { echo >&2 "I require docker but it's not installed.  Aborting."; exit 1; }
+if [[ -e /etc/debian_version ]]; then
+  command -v docker.io >/dev/null 2>&1 || { echo >&2 "I require docker.io but it's not installed.  Aborting."; exit 1; }
 fi
 
 OPTION=${1}
@@ -20,9 +19,9 @@ DOCKERFILEPATH=Dockerfiles/
 CONTAINER=apache2
 
 function build {
-  echo "Using ${ENVGIT}"
+  echo "### DEBUG: Using ${ENVGIT}"
   sed "s#ENVGIT#${ENVGIT}#g" ${DOCKERFILEPATH}${CONTAINER}/Dockerfile.template > ${DOCKERFILEPATH}${CONTAINER}/Dockerfile
-  echo "Using the following Dockerfile"
+  echo "### DEBUG: Using the following Dockerfile"
   cat ${DOCKERFILEPATH}${CONTAINER}/Dockerfile
   docker build -t quiqqer/apache2 ${DOCKERFILEPATH}${CONTAINER}
   echo "Cleanup Dockerfile..."

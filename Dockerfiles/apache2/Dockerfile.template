@@ -1,0 +1,13 @@
+FROM ubuntu:14.04
+ENV GITREPO ENVGIT
+RUN apt-get update
+RUN apt-get install -y apache2
+RUN apt-get install -y php5 php5-common php5-mysql php5-cli php5-pgsql
+RUN apt-get install -y git
+RUN apt-get clean all
+RUN cd /var/www && git clone ${GITREPO}
+RUN rm -rf /var/www/html
+RUN mv /var/www/WordPress /var/www/html
+RUN chown www-data. -R /var/www/html
+EXPOSE 80
+CMD ["/usr/sbin/apache2ctl start -D FOREGROUND"]

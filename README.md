@@ -6,9 +6,9 @@ Dieses Script erzeugt zwei Dockercontainer für quiqqer.
 
 ##Usage
 sudo bash quiqqer.sh <OPTION>
- *start <GITREPO>     - start the containers mysql & apache2 with quiqqer installed
- *build <GITREPO>     - building apache2 container, download quiqqer from repo
- *stop\_all\_containers - stopping and deleting ALL containers on the host
+- start <GITREPO>     - start the containers mysql & apache2 with quiqqer installed
+- build <GITREPO>     - building apache2 container, download quiqqer from repo
+- stop\_all\_containers - stopping and deleting ALL containers on the host
 
 ##Abhängigkeiten
 - bash

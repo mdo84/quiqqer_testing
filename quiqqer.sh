@@ -2,8 +2,8 @@
 # using docker to test quiqqer
 #
 # Usage:
-#  start               - start the containers mysql & apache2 with quiqqer installed"
-#  build               - building apache2 container, download quiqqer from repo"
+#  start               - start and build the containers mysql & apache2 with quiqqer installed"
+#  build               - only build the containers"
 #  stop_all_containers - stopping and deleting ALL containers on the host"
 #
 #
@@ -64,8 +64,8 @@ function repo_check {
 function usage {
 
   echo Usage:
-  echo " start <GITREPO>     - start the containers mysql & apache2 with quiqqer installed"
-  echo " build <GITREPO>     - building apache2 container, download quiqqer from repo"
+  echo " start <GITREPO>     - start and build the containers mysql & apache2 with quiqqer installed"
+  echo " build <GITREPO>     - only build the containers"
   echo " stop_all_containers - stopping and deleting ALL containers on the host"
 
 }
